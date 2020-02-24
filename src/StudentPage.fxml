@@ -16,7 +16,7 @@
          </image>
       </ImageView>
       <Label layoutX="26.0" layoutY="171.0" prefHeight="17.0" prefWidth="117.0" text="Student Name:" />
-      <TextField fx:id="studentNameTextField" layoutX="133.0" layoutY="166.0" promptText="Chars Only" />
+      <TextField fx:id="studentNameTextField" layoutX="133.0" layoutY="166.0" promptText="Letters Only" />
       <Label layoutX="26.0" layoutY="205.0" text="Student ID: " />
       <TextField fx:id="StudentIDTextField" layoutX="133.0" layoutY="209.0" promptText="Numbers Only" />
       <Button fx:id="addStudent" layoutX="253.0" layoutY="310.0" mnemonicParsing="false" onAction="#addNewStudent" text="Add " />

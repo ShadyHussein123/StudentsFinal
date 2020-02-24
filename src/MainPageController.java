@@ -25,7 +25,7 @@ public class MainPageController {
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
-            stage.setTitle("Trial");
+            stage.setTitle("Add Student");
             stage.show();
 
 
@@ -46,5 +46,21 @@ public class MainPageController {
 
     public void openClassSearcher(ActionEvent event)
     {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("SearchClass.fxml")));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("Search Class");
+            stage.show();
+
+
+        }catch(Exception e){
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date();
+//            System.out.println(dateFormat.format(date));
+            System.out.println(e + dateFormat.format(date));
+        }
+
     }
 }

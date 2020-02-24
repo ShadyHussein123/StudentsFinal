@@ -8,16 +8,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class StudentController {
     public TextField studentNameTextField;
     public TextField StudentIDTextField;
     public Button backToMainPageBtn;
     public Button addStudent;
-    public ChoiceBox majorChoiceBox;
+    public ChoiceBox<String> majorChoiceBox;
     public Label warningLabel;
 
 
@@ -30,7 +27,7 @@ public class StudentController {
 
     private boolean isInt(TextField studentIDTextField, String addStudent)
     {
-        majorChoiceBox = new ChoiceBox(FXCollections.observableArrayList("Business", "Science & Innnovation", "Engineering", "Post-Graduate studies"));
+        majorChoiceBox = new ChoiceBox<>(FXCollections.observableArrayList("Business", "Science & Innnovation", "Engineering", "Post-Graduate studies"));
         try
         {
             int id = Integer.parseInt(StudentIDTextField.getText());
@@ -60,9 +57,6 @@ public class StudentController {
 
     public void showMajorChoiceBox(MouseEvent mouseEvent)
     {
-        majorChoiceBox = new ChoiceBox(FXCollections.observableArrayList("Business", "Science & Innnovation", "Engineering", "Post-Graduate studies"));
-//        majorChoiceBox.setItems(
-//                FXCollections.observableArrayList("Business", "Science & Innnovation", "Engineering", "Post-Graduate studies")
-//        );
+        majorChoiceBox = new ChoiceBox<>(FXCollections.observableArrayList("English", "Español", "Русский", "简体中文", "日本語"));
     }
 }
