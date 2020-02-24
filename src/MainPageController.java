@@ -15,14 +15,10 @@ public class MainPageController {
     public Button lecturerButton;
     public Scene scene2;
     public Stage p;
+    public Button classSearchButton;
 
     public void openStudent(ActionEvent event) throws IOException
     {
-
-//        Parent root = FXMLLoader.load(getClass().getResource("StudentPage.fxml"));
-//        scene2 = new Scene(root);
-//        p.setScene(scene2);
-//        p.show();
 
         try{
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("StudentPage.fxml")));
@@ -32,9 +28,6 @@ public class MainPageController {
             stage.setTitle("Trial");
             stage.show();
 
-           // Stage stage2 = (Stage) openStudent(getScene().getWindow());
-            // do what you have to do
-          //  stage2.close();
 
         }catch(Exception e){
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -48,5 +41,10 @@ public class MainPageController {
     public void openLecturer(ActionEvent event)
     {
         System.out.println("BB clicked");
+    }
+
+
+    public void openClassSearcher(ActionEvent event)
+    {
     }
 }
