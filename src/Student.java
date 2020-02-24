@@ -13,7 +13,10 @@ public class Student
         this.studentID = studentID;
         this.studentMajor = studentMajor;
         this.map = new HashMap<>();
+        addingStudentToHashMap(studentName,studentID);
     }
+
+
 
     public String getStudentName() {
         return studentName;

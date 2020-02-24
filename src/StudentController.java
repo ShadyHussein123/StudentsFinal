@@ -16,12 +16,19 @@ public class StudentController {
     public Button addStudent;
     public ChoiceBox<String> majorChoiceBox;
     public Label warningLabel;
+    private int id = -1;
 
 
 
 
     public void addNewStudent(ActionEvent event)
     {
+        Student shady = new Student(studentNameTextField.getText(), id, majorChoiceBox.getValue());
+
+        System.out.println(shady.toString());
+        shady.addingStudentToHashMap(studentNameTextField.getText(),id);
+
+
         addStudent.setOnAction(event1 -> isInt(StudentIDTextField, StudentIDTextField.getText()));
     }
 
@@ -30,7 +37,7 @@ public class StudentController {
         majorChoiceBox = new ChoiceBox<>(FXCollections.observableArrayList("Business", "Science & Innnovation", "Engineering", "Post-Graduate studies"));
         try
         {
-            int id = Integer.parseInt(StudentIDTextField.getText());
+            id = Integer.parseInt(StudentIDTextField.getText());
             System.out.println("User ID: " + id);
             return true;
         }
@@ -57,6 +64,12 @@ public class StudentController {
 
     public void showMajorChoiceBox(MouseEvent mouseEvent)
     {
-        majorChoiceBox = new ChoiceBox<>(FXCollections.observableArrayList("English", "Español", "Русский", "简体中文", "日本語"));
+//        majorChoiceBox = new ChoiceBox<>(FXCollections.observableArrayList("English", "Español", "Русский", "简体中文", "日本語"));
+    }
+
+    public void initialize() {
+        majorChoiceBox.getItems().removeAll(majorChoiceBox.getItems());
+        majorChoiceBox.getItems().addAll(" ", "Business", "Engineering", "Science & Innovation" , "Post-graduate");
+        majorChoiceBox.getSelectionModel().select(" ");
     }
 }
