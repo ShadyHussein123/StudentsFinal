@@ -13,7 +13,6 @@
          </image>
       </ImageView>
       <Button fx:id="studentButton" layoutX="21.0" layoutY="240.0" mnemonicParsing="false" onAction="#openStudent" text="Student" />
-      <Button fx:id="lecturerButton" layoutX="486.0" layoutY="240.0" mnemonicParsing="false" onAction="#openLecturer" text="Lecturer" />
-      <Button fx:id="classSearchButton" layoutX="249.0" layoutY="240.0" mnemonicParsing="false" onAction="#openClassSearcher" text="Class Search " />
+      <Button fx:id="courses" layoutX="427.0" layoutY="240.0" mnemonicParsing="false" onAction="#openCourses" text="Courses" />
    </children>
 </AnchorPane>
