@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 public class Course
 {
     private String courseName;
     private int courseID;
     private String courseLecturer;
     private String courseMajor;
+    private ArrayList<Student> studentArrayList;
 
     public Course(String courseName, int courseID, String courseLecturer, String courseMajor)
     {
@@ -11,6 +14,7 @@ public class Course
         this.courseID = courseID;
         this.courseLecturer = courseLecturer;
         this.courseMajor = courseMajor;
+        studentArrayList = new ArrayList<>();
 
     }
 
@@ -55,4 +59,14 @@ public class Course
                 ", courseMajor='" + courseMajor + '\'' +
                 '}';
     }
+
+    public ArrayList<Student> viewStudents(){
+        return studentArrayList;
+    }
+
+    public void addToCourse(Student s){
+
+        studentArrayList.add(s);
+    }
 }
+
