@@ -46,7 +46,9 @@ public class CoursesPageController implements Initializable
         stage.show();
     }
 
-    public void addCourseToStudent(ActionEvent event) {
+    public void addCourseToStudent(ActionEvent event)
+    {
+
     }
 
 
