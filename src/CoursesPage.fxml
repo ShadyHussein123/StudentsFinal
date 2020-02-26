@@ -6,16 +6,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CoursesPageController">
    <children>
-      <Label layoutX="243.0" layoutY="14.0" text="Course Information" />
-      <ChoiceBox fx:id="majorChoiceBoxCourse" layoutX="225.0" layoutY="61.0" prefWidth="150.0" />
+      <Label layoutX="101.0" layoutY="14.0" text="Course Major" />
+      <ChoiceBox fx:id="majorChoiceBoxCourse" layoutX="66.0" layoutY="50.0" prefWidth="150.0" />
       <TextField fx:id="courseNameText" layoutX="76.0" layoutY="124.0" promptText="Course Name" />
       <TextField fx:id="courseIDText" layoutX="358.0" layoutY="124.0" promptText="Course ID" />
-      <TextField fx:id="profNameText" layoutX="224.0" layoutY="187.0" promptText="Professor Name" />
       <Button fx:id="addCourseButton" layoutX="24.0" layoutY="251.0" mnemonicParsing="false" onAction="#addCourse" text="Add course" />
       <Button fx:id="viewCoursesButton" layoutX="243.0" layoutY="251.0" mnemonicParsing="false" onAction="#viewCourses" text="View Courses" />
-      <Button fx:id="iCtStudentButton" layoutX="418.0" layoutY="251.0" mnemonicParsing="false" onAction="#addCourseToStudent" text="Integrate Course to Student" />
+      <Button fx:id="iCtStudentButton" layoutX="412.0" layoutY="251.0" mnemonicParsing="false" onAction="#addCourseToStudent" text="Integrate Course to Student" />
+      <ChoiceBox fx:id="profMajorBox" layoutX="351.0" layoutY="56.0" prefWidth="150.0" />
+      <Label layoutX="378.0" layoutY="14.0" text="Professors " />
    </children>
 </AnchorPane>

@@ -14,5 +14,6 @@
       </ImageView>
       <Button fx:id="studentButton" layoutX="21.0" layoutY="240.0" mnemonicParsing="false" onAction="#openStudent" text="Student" />
       <Button fx:id="courses" layoutX="427.0" layoutY="240.0" mnemonicParsing="false" onAction="#openCourses" text="Courses" />
+      <Button fx:id="lecturerButton" layoutX="230.0" layoutY="240.0" mnemonicParsing="false" onAction="#addLecturer" text="Add Lecturer" />
    </children>
 </AnchorPane>

@@ -32,10 +32,7 @@ public class Lecturer
 
     @Override
     public String toString() {
-        return "Lecturer{" +
-                "lecturerName='" + lecturerName + '\'' +
-                ", lecturerID=" + lecturerID +
-                '}';
+        return getLecturerName();
     }
 
     public void addCourseToLecturer(Course course)

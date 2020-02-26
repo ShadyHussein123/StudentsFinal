@@ -1,5 +1,6 @@
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,6 +15,8 @@ import java.util.Date;
 
 public class MainPageController {
     public Button studentButton;
+    public Button lecturerButton;
+    public Button courses;
 
 
     public void openStudent(ActionEvent event) throws IOException
@@ -35,11 +38,6 @@ public class MainPageController {
             System.out.println(e + dateFormat.format(date));
         }
 
-    }
-
-    public void openLecturer(ActionEvent event)
-    {
-        System.out.println("BB clicked");
     }
 
 
@@ -67,6 +65,16 @@ public class MainPageController {
     public void openCourses(ActionEvent event) throws IOException
     {
         FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("CoursesPage.fxml")));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.setTitle("Search Class");
+        stage.show();
+    }
+
+    public void addLecturer(ActionEvent event) throws IOException
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("LecturerPage.fxml")));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
