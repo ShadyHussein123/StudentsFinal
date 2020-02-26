@@ -5,7 +5,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="323.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StudentPageController">
    <children>
       <ImageView fitHeight="140.0" fitWidth="561.0" layoutX="18.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -14,8 +13,7 @@
          </image>
       </ImageView>
       <Button fx:id="addStudentButton" layoutX="18.0" layoutY="173.0" mnemonicParsing="false" onAction="#openAddStudent" text="Add Student " />
-      <Button fx:id="searchStudentButton" layoutX="244.0" layoutY="173.0" mnemonicParsing="false" onAction="#openSearchStudent" text="Search Student" />
-      <Button fx:id="deleteStudentButton" layoutX="464.0" layoutY="173.0" mnemonicParsing="false" onAction="#openDeleteStudent" text="Delete Student" />
+      <Button fx:id="searchStudentButton" layoutX="461.0" layoutY="173.0" mnemonicParsing="false" onAction="#openSearchStudent" text="Search Student" />
       <Button fx:id="backButton" layoutX="14.0" layoutY="275.0" mnemonicParsing="false" onAction="#backToMainPage" text="Back" />
    </children>
 </AnchorPane>

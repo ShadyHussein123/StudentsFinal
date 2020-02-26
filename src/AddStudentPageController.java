@@ -11,9 +11,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.ResourceBundle;
+import java.util.*;
 
 
 public class AddStudentPageController implements Initializable
@@ -22,7 +20,11 @@ public class AddStudentPageController implements Initializable
     public TextField studentNameText;
     public TextField studentIDText;
     public Button addStudentButton;
-    static ArrayList<Student> studentArrayList;
+    static Set<Student> studentArrayList = new HashSet<>();
+
+
+
+
     public ChoiceBox majorChoiceBox;
     public Button backToStudentButton;
 
@@ -31,6 +33,7 @@ public class AddStudentPageController implements Initializable
     {
         int id = Integer.parseInt(studentIDText.getText());
         Student s = new Student(studentNameText.getText(), id, (String) majorChoiceBox.getValue());
+        studentArrayList.add(s);
 
         System.out.println(s.toString());
 

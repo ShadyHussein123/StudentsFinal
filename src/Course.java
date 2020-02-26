@@ -3,12 +3,15 @@ public class Course
     private String courseName;
     private int courseID;
     private String courseLecturer;
+    private String courseMajor;
 
-    public Course(String courseName, int courseID, String courseLecturer)
+    public Course(String courseName, int courseID, String courseLecturer, String courseMajor)
     {
         this.courseName = courseName;
         this.courseID = courseID;
         this.courseLecturer = courseLecturer;
+        this.courseMajor = courseMajor;
+
     }
 
     public String getCourseName() {
@@ -35,12 +38,21 @@ public class Course
         this.courseLecturer = courseLecturer;
     }
 
+    public String getCourseMajor() {
+        return courseMajor;
+    }
+
+    public void setCourseMajor(String courseMajor) {
+        this.courseMajor = courseMajor;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
                 "courseName='" + courseName + '\'' +
                 ", courseID=" + courseID +
                 ", courseLecturer='" + courseLecturer + '\'' +
+                ", courseMajor='" + courseMajor + '\'' +
                 '}';
     }
 }

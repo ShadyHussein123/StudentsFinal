@@ -2,12 +2,17 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -15,27 +20,39 @@ public class SearchStudentController implements Initializable {
     public Button showStudentSearch;
     public Button backToStudent;
     @FXML
-    public TableView tableView;
+    public TableView tableView ;
     public TableColumn<Student,String> nameColumn;
     public TableColumn <Student,String> studentIDColumn;
     public TableColumn <Student,String>studentMajorColumn;
-    public TableColumn <Student,String>coursesColumn;
+    public Button deleteButton;
 
-    public void showStudent(ActionEvent event)
+
+    public void backToStudent(ActionEvent event)throws IOException
     {
+        FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("StudentPage.fxml")));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.setTitle("Search Class");
+        stage.show();
 
-    }
-
-
-
-
-    public void backToStudent(ActionEvent event) {
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        nameColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("getStudentName"));
+        nameColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getStudentName()));
+        studentIDColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getStudentID()+ ""));
+        studentMajorColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getStudentMajor()));
+
+
+        System.out.println(AddStudentPageController.studentArrayList);
         tableView.setItems(FXCollections.observableArrayList(AddStudentPageController.studentArrayList));
+    }
+
+    public void deleteStudent(ActionEvent event)
+    {
+        AddStudentPageController.studentArrayList.remove(tableView.getSelectionModel().getSelectedItem());
+        tableView.refresh();
     }
 }
