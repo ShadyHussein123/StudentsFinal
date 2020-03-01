@@ -1,3 +1,6 @@
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import java.util.HashSet;
 
 public class Student
@@ -50,4 +53,9 @@ public class Student
     public String toString() {
         return studentName;
     }
+
+    public void removeStudentCourse(Course course){
+        courses.remove(course);
+    }
+    
 }

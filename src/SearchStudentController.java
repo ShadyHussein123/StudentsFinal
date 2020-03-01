@@ -46,13 +46,16 @@ public class SearchStudentController implements Initializable {
         studentMajorColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getStudentMajor()));
 
 
-        System.out.println(AddStudentPageController.studentArrayList);
-        tableView.setItems(FXCollections.observableArrayList(AddStudentPageController.studentArrayList));
+        System.out.println(AddStudentPageController.studentHashSet);
+        tableView.setItems(FXCollections.observableArrayList(AddStudentPageController.studentHashSet));
+
+
+
     }
 
     public void deleteStudent(ActionEvent event)
     {
-        AddStudentPageController.studentArrayList.remove(tableView.getSelectionModel().getSelectedItem());
+        AddStudentPageController.studentHashSet.remove(tableView.getSelectionModel().getSelectedItem());
         tableView.refresh();
     }
 }

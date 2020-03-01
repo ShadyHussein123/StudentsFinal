@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,6 +29,7 @@ public class LecturerController
         lecturerArrayList.add(l);
 
         System.out.println(l);
+
 
     }
 }

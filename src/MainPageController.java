@@ -27,14 +27,13 @@ public class MainPageController {
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
-            stage.setTitle("Add Student");
+            stage.setTitle("Student");
             stage.show();
 
 
         }catch(Exception e){
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date date = new Date();
-//            System.out.println(dateFormat.format(date));
             System.out.println(e + dateFormat.format(date));
         }
 
@@ -48,7 +47,7 @@ public class MainPageController {
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
-            stage.setTitle("Search Class");
+            stage.setTitle("View Class");
             stage.show();
 
 
@@ -68,7 +67,7 @@ public class MainPageController {
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
-        stage.setTitle("Search Class");
+        stage.setTitle("Courses");
         stage.show();
     }
 
@@ -78,7 +77,10 @@ public class MainPageController {
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
-        stage.setTitle("Search Class");
+        stage.setTitle("Lecturer");
         stage.show();
+
+        
+
     }
 }

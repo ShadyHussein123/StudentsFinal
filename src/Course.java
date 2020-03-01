@@ -1,5 +1,8 @@
+import javax.naming.Name;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
-
+@XmlRootElement(name = "Course")
 public class Course
 {
     private String courseName;
@@ -18,6 +21,7 @@ public class Course
 
     }
 
+    @XmlElement
     public String getCourseName() {
         return courseName;
     }
@@ -26,6 +30,7 @@ public class Course
         this.courseName = courseName;
     }
 
+    @XmlElement
     public int getCourseID() {
         return courseID;
     }
@@ -34,6 +39,7 @@ public class Course
         this.courseID = courseID;
     }
 
+    @XmlElement
     public String getCourseLecturer() {
         return courseLecturer;
     }
@@ -42,6 +48,7 @@ public class Course
         this.courseLecturer = courseLecturer;
     }
 
+    @XmlElement
     public String getCourseMajor() {
         return courseMajor;
     }
@@ -52,12 +59,7 @@ public class Course
 
     @Override
     public String toString() {
-        return "Course{" +
-                "courseName='" + courseName + '\'' +
-                ", courseID=" + courseID +
-                ", courseLecturer='" + courseLecturer + '\'' +
-                ", courseMajor='" + courseMajor + '\'' +
-                '}';
+        return courseName + "" + courseID;
     }
 
     public ArrayList<Student> viewStudents(){
@@ -68,5 +70,11 @@ public class Course
 
         studentArrayList.add(s);
     }
+
+    public void removeStudent(Student s)
+    {
+        studentArrayList.remove(s);
+    }
+
 }
 

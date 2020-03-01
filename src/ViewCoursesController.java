@@ -37,11 +37,11 @@ public class ViewCoursesController implements Initializable
 
     public void deleteStudent(ActionEvent event)
     {
-        AddStudentPageController.studentArrayList.remove(coursesTableView.getSelectionModel().getSelectedItem());
+        AddStudentPageController.studentHashSet.remove(coursesTableView.getSelectionModel().getSelectedItem());
         coursesTableView.refresh();
     }
 
-    public void backToCourses(ActionEvent event)throws IOException
+    public void backToCourses(ActionEvent event) throws IOException
     {
         FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("CoursesPage.fxml")));
         Parent root1 = (Parent) fxmlLoader.load();

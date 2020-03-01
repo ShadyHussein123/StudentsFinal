@@ -12,6 +12,9 @@ import javafx.scene.input.ContextMenuEvent;
 import javafx.stage.Stage;
 
 import javax.imageio.IIOException;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -30,13 +33,13 @@ public class CoursesPageController implements Initializable
     public TextField profNameText;
     public ChoiceBox <Lecturer> profMajorBox;
 
-    public void addCourse(ActionEvent event)
-    {
+    public void addCourse(ActionEvent event) throws JAXBException {
         int id = Integer.parseInt(courseIDText.getText());
 
         Course course = new Course(courseNameText.getText(),id ,profMajorBox.getValue().toString(), majorChoiceBoxCourse.getValue());
         courseArrayList.add(course);
         System.out.println(course);
+        
     }
 
     public void viewCourses(ActionEvent event) throws IOException

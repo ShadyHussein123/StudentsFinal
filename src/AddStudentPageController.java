@@ -12,6 +12,7 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class AddStudentPageController implements Initializable
@@ -20,7 +21,7 @@ public class AddStudentPageController implements Initializable
     public TextField studentNameText;
     public TextField studentIDText;
     public Button addStudentButton;
-    static Set<Student> studentArrayList = new HashSet<>();
+    static Set<Student> studentHashSet = new HashSet<>();
 
 
 
@@ -33,7 +34,7 @@ public class AddStudentPageController implements Initializable
     {
         int id = Integer.parseInt(studentIDText.getText());
         Student s = new Student(studentNameText.getText(), id, (String) majorChoiceBox.getValue());
-        studentArrayList.add(s);
+        studentHashSet.add(s);
 
         System.out.println(s.toString());
 
@@ -47,6 +48,7 @@ public class AddStudentPageController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         majorChoiceBox.setItems(FXCollections.observableArrayList(" ", "Business","Computer Science", "Engineering" ));
+
     }
 
 

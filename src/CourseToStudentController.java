@@ -29,7 +29,9 @@ public class CourseToStudentController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        studentMajorBox.setItems(FXCollections.observableArrayList(AddStudentPageController.studentArrayList));
+        studentMajorBox.setItems(FXCollections.observableArrayList(AddStudentPageController.studentHashSet));
+
+
         courseMajorBox.setItems(FXCollections.observableArrayList(CoursesPageController.courseArrayList));
 
 
@@ -45,7 +47,11 @@ public class CourseToStudentController implements Initializable {
 
     public void deleteCourse(ActionEvent event)
     {
-        courseMajorBox.getSelectionModel().getSelectedItem().addToCourse(studentMajorBox.getValue());
+        courseMajorBox.getSelectionModel().getSelectedItem().removeStudent(tableview.getSelectionModel().getSelectedItem());
+        studentMajorBox.getSelectionModel().getSelectedItem().removeStudentCourse(courseMajorBox.getSelectionModel().getSelectedItem());
         tableview.refresh();
+
     }
+
+
 }
